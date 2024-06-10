@@ -1,0 +1,105 @@
+.datepicker {
+    border: 0;
+    box-shadow: 0px 7px 14px rgba(0,0,0,.07);
+    border-radius: 0;
+    @include mobile{
+        min-width: 20rem;
+    }
+    table{
+        width: 100%;
+        thead{
+            tr{
+                &:nth-child(2){
+                    border-top: 1px solid #BDBDBD;
+                    border-bottom: 1px solid #BDBDBD;
+                }
+            }
+        }
+        th{
+            font-family: $body;
+            font-size: .75rem;
+            line-height: 1;
+            color: $black;
+            font-weight: 500;
+            padding: 8px;
+            text-transform: uppercase;
+            &.datepicker-switch{
+                font-size: 1rem;
+                line-height: 1.17;
+                text-transform: capitalize;
+                text-align: center;
+            }
+            &.next{
+                color: transparent;
+                background: url("../img/right-arrow.svg") no-repeat;
+                background-position: center center;
+                background-size: 6px;
+                cursor: pointer;
+            }
+            &.prev{
+                color: transparent;
+                background: url("../img/right-arrow.svg") no-repeat;
+                background-position: center center;
+                background-size: 6px;
+                transform: rotate(180deg);
+                cursor: pointer;
+            }
+        }
+        td{
+            font-family: $body;
+            font-size: 1rem;
+            line-height: 1.375;
+            color: $black;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            &:hover{
+                background:#eee;;
+            }
+            &.new{
+                color: transparent;
+            }
+            &.old{
+                color: transparent;
+            }    
+            &.today, &.active{
+                color: $white;
+                background: $accent-red;
+            }       
+        }
+    }
+    .datepicker-months{
+        table{
+            td{
+                .month{
+                    display: block;
+                    width: 23%;
+                    float: left;
+                    margin: 1%;
+                    cursor: pointer;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .datepicker-years{
+        table{
+            td{
+                .year{
+                    display: block;
+                    width: 23%;
+                    float: left;
+                    margin: 1%;
+                    cursor: pointer;
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

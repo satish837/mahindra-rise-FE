@@ -1,0 +1,32 @@
+.breadcumb {
+    display: flex;
+    font-family: $body;
+    font-size: 1rem;
+    line-height: 1.18;
+    color: $black;
+
+    @include mobile {
+        flex-wrap: wrap;
+    }
+
+    a {
+        color: $breadcumb-text;
+        padding-right: 16px;
+        position: relative;
+        text-decoration: none;
+        white-space: nowrap;
+
+        &:after {
+            position: absolute;
+            content: '/';
+            right: 6px;
+        }
+    }
+
+    span {
+        @include mobile {
+            word-break: break-all;
+            flex: unset !important;
+        }
+    }
+}

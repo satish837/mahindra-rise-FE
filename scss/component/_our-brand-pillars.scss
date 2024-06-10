@@ -1,0 +1,73 @@
+.our-brand-pillars{
+    ul{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 60%;
+        margin: 3rem auto;
+        @include mobile{
+            max-width: 80%;
+            margin: 2rem auto;
+            margin-bottom: 0;
+        }
+        li{
+            width: 28.33%;
+            margin: 0 2.5%;
+            @include mobile{
+                width: 100%;
+                margin: 0 0 1rem 0;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            .wrap{
+                height: 100%;
+                background: $accent-red;
+                .image{
+                    overflow: hidden;
+                    position: relative;
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                    }
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        width: 160px;
+                        height: 6px;
+                        background: $accent-red;
+                        left: 0%;
+                        bottom: 20%;
+                        transform: rotate(-20deg) skew(-20deg) translate(-5%, 0%);
+                        z-index: 1;
+                    }
+                    img{
+                        width: 100%;
+                        transition: $base-transition;
+                    }
+                }
+                &:hover{
+                    .image{
+                        img{
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+                .title-wrap{
+                    padding: 1rem;
+                    padding-bottom: 2rem;
+                    line-height: 1;
+                    color: $white;
+                    font-family: $heading-regular;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

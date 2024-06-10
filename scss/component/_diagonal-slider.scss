@@ -1,0 +1,310 @@
+.diagonal-slider-wrap {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    @include mobile {
+        height: 70vh;
+    }
+
+    .section-header {
+        position: absolute;
+        width: 75%;
+        left: 50%;
+        top: 5%;
+        z-index: 1;
+        transform: translate(-50%, 0);
+        color: $white;
+
+        h2 {
+            font-size: 2.25rem;
+            color: $white;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+    }
+
+    .bind {
+        position: absolute;
+        width: 100%;
+        height: 170%;
+        left: 0;
+        top: 0;
+        transform: skewY(-15deg) translate(0, -25%);
+
+        @include mobile {
+            height: 120%;
+            transform: skewY(-15deg) translate(0, -8%);
+        }
+
+        @include ipadPortrait {
+            height: 130%;
+            transform: skewY(-15deg) translate(0, -12%);
+        }
+
+        .diagonal-slider {
+            &.swiper {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .swiper-slide {
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+
+                .beam-bar {
+                    position: absolute;
+                    width: 70%;
+                    height: 6px;
+                    background: $accent-red;
+                    left: 0;
+                    bottom: 0;
+                    transform: translate(-80%, 0);
+
+                    @include ipadLandscape {
+                        transform: translate(-120%, 0);
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0) 100%);
+                }
+
+                .slide-bgimg {
+                    display: block;
+                    transition: all 2s ease-in-out;
+
+                    @include mobile {
+                        display: initial;
+                    }
+                }
+
+                img {
+                    width: 120%;
+                    height: 165%;
+                    object-fit: cover;
+                    transform: skewY(15deg) translate(0, -15%);
+
+                    @include ipadLandscape {
+
+                        transform: skewY(15deg) translate(0, -13%);
+                    }
+
+                    @include mobile {
+                        transform: skewY(15deg) translate(0, -10%);
+                    }
+                }
+
+                &.swiper-slide-active {
+                    .slide-bgimg {
+                        transform: translate(-5%, 0) scale(1.1);
+                    }
+                }
+
+                &.swiper-slide-prev {
+                    .slide-bgimg {
+                        transform: translate(-20%, -20%) scale(1.5);
+                    }
+                }
+
+                &.swiper-slide-next {
+                    .slide-bgimg {
+                        transform: translate(0%, 0) scale(1);
+                    }
+                }
+
+                .content {
+                    position: absolute;
+                    width: 100%;
+                    left: 50%;
+                    top: 70%;
+                    transform: translate(-50%, -50%) skewY(15deg);
+                    text-align: center;
+
+                    @include ipadLandscape {
+                        top: 75%;
+                    }
+
+                    @include mobile {
+                        top: 50%;
+                    }
+
+                    .year {
+                        font-family: $heading-medium;
+                        font-size: 5rem;
+                        color: $white;
+                        line-height: 1.1;
+                        transform: translate(0, -30px);
+                        opacity: 0;
+
+                        @include mobile {
+                            font-size: 2rem;
+                        }
+                    }
+
+                    .heading {
+                        font-size: 40px;
+                        font-family: $heading-medium;
+                        color: $white;
+                        line-height: 1.1;
+                        transform: translate(0, -30px);
+                        opacity: 0;
+
+                        @include mobile {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    p {
+                        font-weight: 500;
+                        color: $white;
+                        font-size: 1.68rem;
+                        transform: translate(0, 30px);
+                        opacity: 0;
+
+                        @include mobile {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                &.swiper-slide-active {
+                    img {
+
+                        @include ipadLandscape {
+                            // transform: skewY(15deg) translate(0, -13%);
+                        }
+
+                        @include mobile {
+                            // transform: skewY(15deg) translate(0, 0);
+                        }
+                    }
+                }
+            }
+
+            .swiper-button-prev-diagonal,
+            .swiper-button-next-diagonal {
+                border-radius: 0;
+                border: $white solid 1px;
+                width: 40px;
+                height: 40px;
+                top: auto;
+                background: transparent;
+                bottom: 10%;
+                left: auto;
+                right: calc(5% + 50px + 0.75rem);
+                transform: skewY(15deg);
+                z-index: 1;
+                position: absolute;
+                cursor: pointer;
+
+                @include mobile {
+                    bottom: 6%;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: $white;
+                    transition: $base-transition;
+                    z-index: -1;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    z-index: 2;
+                    background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") center center no-repeat;
+                    background-size: 10px;
+                }
+
+                &.previous {
+                    left: auto;
+                    right: calc(5% + 50px + 0.75rem);
+                }
+
+                &.next {
+                    right: calc(5% + 0.75rem);
+                }
+
+                &:hover {
+                    border: $accent-red solid 1px;
+                    background: transparent;
+
+                    &:after {
+                        background: $accent-red;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .swiper-button-prev-diagonal {
+                margin-bottom: 14px;
+            }
+
+            .swiper-button-next-diagonal {
+                right: calc(5% + 0.75rem);
+
+                &:before {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .swiper-pagination {
+                width: auto;
+                right: auto;
+                left: 5%;
+                text-align: left;
+                transform: skew(15deg) translate(0) rotate(15deg);
+                top: calc(61% + 25px);
+                display: flex;
+
+                @include ipadLandscape {
+                    top: calc(69% + 15px);
+                }
+
+                @include mobile {
+                    text-align: center;
+                    bottom: 18%;
+                    top: auto;
+                }
+
+                @include bigdesktop {
+                    top: calc(64% + 25px);
+                }
+
+                .swiper-pagination-bullet {
+                    width: 6px;
+                    height: 6px;
+                    margin: 0 8px;
+                    opacity: 1;
+                    background: $white;
+
+                    &-active {
+                        background: $accent-red;
+                    }
+                }
+            }
+        }
+    }
+}

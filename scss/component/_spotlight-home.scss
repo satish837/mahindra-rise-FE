@@ -1,0 +1,79 @@
+.spotlight-home-wrap{
+    height: 100%;
+    position: relative;
+    .swiper-pagination, .swiper-button-white{
+        transform: translate(0, 20px);
+        opacity: 0;
+    }
+}
+.spotlight-home{
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    .slides{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background: rgba($black, 0.7);
+        &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba($black,0.5);
+            @include mobile{
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content{
+            @include mobile{
+                top: auto;
+                bottom: 15%;
+                transform: translate(0,0);
+            }
+            &:before{
+                @include mobile{
+                    transform: rotate(-20deg) skew(-20deg) translate(-80%, 0);
+                }
+            }
+            p{
+                @include mobile{
+                    max-width: 80%;
+                    margin: 0 auto;
+                    margin-bottom: 2rem;
+                }
+            }
+            &.medium-text{
+                h2{
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    .flickity-page-dots{
+        @include mobile{
+            bottom: 5%;
+        }
+        .dot{
+            @include mobile{
+                background: rgba($white, 1);
+            }
+            &.is-selected{
+                background: $accent-red;
+            }
+        }
+    }
+    .flickity-prev-next-button{
+        @include mobile{
+            display: none;
+        }
+    }
+}

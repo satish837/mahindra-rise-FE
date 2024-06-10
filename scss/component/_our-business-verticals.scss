@@ -1,0 +1,175 @@
+.our-business-verticals {
+    .wrap {
+        position: relative;
+
+        .image {
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 1;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            }
+
+            img {
+                transition: $base-transition;
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            .image {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .title {
+            position: absolute;
+            font-size: 1.375rem;
+            left: 2rem;
+            bottom: 2.5rem;
+            padding-bottom: 0.2rem;
+            color: $white;
+            display: flex;
+            z-index: 2;
+            max-width: calc(100% - 4rem);
+
+            @include ipadLandscape {
+                left: 1rem;
+                bottom: 1rem;
+                max-width: calc(100% - 2rem);
+            }
+
+            @include mobile {
+                left: 1rem;
+                bottom: 1rem;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                height: 1px;
+                background: $white;
+            }
+
+            img {
+                width: 12px;
+                margin-left: 5px;
+            }
+        }
+
+        &.quotes-wrap {
+            background: #F7F5EF;
+            height: 100%;
+            padding: 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+
+            @include mobile {
+                padding: 1rem;
+            }
+
+            .icon {
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+
+            .quotes {
+                font-weight: 500;
+                font-size: 1.5rem;
+                max-width: 60%;
+
+                @include mobile {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    &.template-2 {
+        .wrap {
+            .image {
+                &:after {
+                    display: none;
+                }
+            }
+
+            .title {
+                font-size: 1.25rem;
+                left: 2rem;
+                bottom: 2rem;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            .title-wrap {
+                left: 2rem;
+                bottom: 2rem;
+                position: absolute;
+                padding-bottom: 0.2rem;
+                color: $white;
+                display: flex;
+                flex-wrap: wrap;
+                z-index: 2;
+
+                @include mobile {
+                    left: 1rem;
+                    bottom: 1rem;
+                }
+
+                .title {
+                    position: relative;
+                    left: auto;
+                    bottom: auto;
+                    padding-bottom: 0;
+                    margin-bottom: 1rem;
+                }
+
+                .button-wrap {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+
+                    .btn {
+                        display: flex;
+                        white-space: nowrap;
+                        font-size: 1.125rem;
+                        margin-right: 1rem;
+
+                        @include mobile {
+                            margin-right: 0.5rem;
+                        }
+
+                        svg,
+                        img {
+                            width: 12px;
+                            margin-left: 5px;
+                            fill: $white;
+                        }
+
+                        &:hover {
+                            svg {
+                                fill: $accent-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

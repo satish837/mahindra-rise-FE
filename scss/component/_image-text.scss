@@ -1,0 +1,64 @@
+.image-text-component{
+    @include tabletPotrait{
+        padding-top: 3rem;
+    }
+    @include mobile{
+        padding-top: 3rem;
+    }
+    .row{
+        align-items: center;
+        &>div{
+            &:first-child{
+                @include tabletPotrait{
+                    order: 2;
+                }
+                @include mobile{
+                    order: 2;
+                }
+            }
+        }
+    }
+    .image-overlay{
+        &::after{
+            background: rgba(0,0,0,.3);
+        }
+        img{
+            width: 100%;
+        }
+    }    
+    .content{        
+        padding: 50px;
+        @include tabletPotrait{
+            padding: 20px;
+        }
+        @include mobile{
+            padding: 20px;
+        }
+        h3{
+            font-size: 1.875rem;
+            line-height: 1.2;
+            color: $black;
+            font-weight: 400;
+            @include mobile{
+                font-size: 1.5rem;
+            }
+        }
+        p{
+            font-size: 1.25rem;
+            line-height: 1.66;
+            @include mobile{
+                font-size: 1rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.image-right-component{
+        .row{
+            &>div{
+                &:first-child{
+                    order: 2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+.interested-in-contact{
+    .tab-nav{
+        .nav{
+            @include mobile{
+                flex-wrap: wrap;
+                margin-bottom: 0;
+            }
+            li{
+                @include mobile{
+                    flex-wrap: wrap;
+                    width: 100%;
+                    border-bottom: 1px solid #999999;
+                    padding: 0;
+                }
+                &:last-child{
+                    @include mobile{
+                        border-bottom: 0;
+                    }
+                }
+                &::before{
+                    @include mobile{
+                        display: none;
+                    }
+                }
+                a{
+                    @include mobile{
+                        font-weight: 600;
+                        display: inline-block;
+                        width: 100%;
+                        padding: 20px 0;
+                        color: $black;
+                    }
+                    &.active{
+                        @include mobile{
+                            color: $black;
+                        }
+                    }
+                    &::before{
+                        @include mobile{
+                            display: none;
+                        }
+                    }
+                    &::after{
+                        @include mobile{
+                            position: absolute;
+                            content: '';
+                            background: url(../img/right-arrow.svg) no-repeat;
+                            width: 8px;
+                            top: 22px;
+                            height: 16px;
+                            background-size: 100%;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+   .tab-content{
+      & > .active{
+        @include mobile{
+            display: none;
+        }
+      }
+     .mob-head{
+        display: none;
+        position: relative;
+        @include mobile{
+            display: block;
+            text-align: center;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #BABABA;
+        }
+        .mobile-heading{
+            font-family: $body;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.25;
+            color: $black;
+        }
+        .back{
+            position: absolute;
+            left: 0;
+            font-family: $body;
+            font-weight: 400;
+            font-size: .875rem;
+            color: $black;
+            padding-left: 18px;
+            &:after{
+                position: absolute;
+                content: '';
+                background: url(../img/right-arrow.svg) no-repeat;
+                width: 8px;
+                top: 1px;
+                height: 16px;
+                background-size: 100%;
+                transition: all 0.3s ease-in-out;
+                left: 0;
+                transform: rotate(180deg);
+            }
+        }
+     }
+   }
+
+
+
+    .thank-you-wrap{
+        min-height: 418px;
+    }
+    h6{
+        font-family: $body;
+        font-weight: 500;
+        font-size: 1.37rem;
+        line-height: 1.63;
+        color: $black;
+        max-width: 850px;
+        margin: 0 auto;
+        @include mobile{
+            font-size: .875rem;
+            line-height: 1.85;
+            padding: 0 25px;
+        }
+    }
+    form{
+        @include mobile{
+           gap:0px;
+        }
+        .form-group{
+            margin-bottom: 17px;
+            &.textarea{
+                height:100%;
+                textarea{
+                    height: calc(100% - 3.3rem);
+                    padding: .375rem .75rem;
+                    overflow-y: auto;
+                    resize: none;
+                    @include mobile{
+                        height:185px;
+                    }
+                }
+            }
+        }
+    }
+    .contact-form-wrap{
+        @include mobile{
+            padding: 30px 25px;
+        }
+        h5, p{
+            @include mobile{
+                text-align: left;
+            }
+        }
+        form{
+            .submit-btn{
+                .btn{
+                    @include mobile{
+                        margin-top: 40px;
+                    }
+                }
+            } 
+        } 
+    } 
+}

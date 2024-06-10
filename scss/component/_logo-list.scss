@@ -1,0 +1,20 @@
+.logo-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;   
+    justify-content: center; 
+    li{
+        padding: 0 10px 30px;
+       & + li{
+            @include desktop{
+                margin-left:1rem;
+            }
+       }
+        @include mobile{
+            max-width: 115px;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}

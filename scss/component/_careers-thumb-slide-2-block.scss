@@ -1,0 +1,72 @@
+.people-exp{
+    padding: 0 0;
+    @include mobile{
+        // padding-bottom: 5em;
+        margin-bottom: 0;
+    }
+    .d-flex{
+        align-items: center;
+        background: $grey-bg;
+        @include mobile{
+            flex-direction: column !important;
+            padding-bottom: 4em;
+        }
+    }
+    .swiper-slide{
+        &::after{
+            display: none;
+        }
+        .exp-img{
+            width: 50%;
+            position: relative;
+            @include mobile{
+                width: 100%;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+                        @include mobile{
+                            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+                        }
+            }
+        }
+        .exp-content{
+            width: 50%;
+            padding:0 5em 0 3em;
+            @include mobile{
+                width: 100%;
+                padding:2em;
+                text-align: center;
+            }
+            img{
+                width: auto !important;
+                height: auto;
+            }
+            h3{
+                font-size: 22px;
+                margin: 2em 0 0;
+                font-weight: 400;
+                font-family: $heading-regular;
+                text-transform: uppercase;
+                @include mobile{
+                    font-size: 1rem;
+                    margin-top: 1.25rem;
+                }
+            }
+            p{
+                line-height: 28px;
+            }
+        }
+    }
+
+    .what-we-do-thumb-slider{
+        @include mobile{
+            display: none;
+        }
+    }
+}

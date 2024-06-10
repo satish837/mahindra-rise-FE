@@ -1,0 +1,451 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Mahindra Rise</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/favicon.png">
+  <!-- All CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- All CDN CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="wrap">
+        <div class="logo">
+          <a href="javascript:;">
+            <svg viewBox="0 0 217 32" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M40.1331 14.6703H52.8863C55.7684 14.6703 58.1461 16.986 58.1461 19.8135V31.5868H39.0763C37.323 31.5868 35.882 30.173 35.882 28.4424C35.882 27.0773 35.882 25.7123 35.882 24.3473C35.882 22.7385 37.227 21.4223 38.8602 21.4223H49.4278L48.299 23.8111H40.5174C40.1811 23.8111 39.7968 24.0792 39.7968 24.4448C39.7968 25.5173 39.7968 26.5898 39.7968 27.6623C39.7968 28.028 40.1811 28.2961 40.5174 28.2961H54.0151V20.5691C54.0151 19.0822 52.6942 17.9366 51.2291 17.9366H38.5719L40.1331 14.6703ZM144.873 8.52775V31.6111H126.284C124.53 31.6111 123.089 30.1974 123.089 28.4667C123.089 25.5904 123.089 22.7142 123.089 19.8135C123.089 16.986 125.467 14.6703 128.349 14.6703H138.941L137.38 17.961H129.982C128.517 17.961 127.196 19.1066 127.196 20.5935C127.196 22.9579 127.196 25.3223 127.196 27.6867C127.196 28.0523 127.58 28.3205 127.917 28.3205H140.742V8.52775H144.873ZM79.5697 31.6111H83.6766C83.6766 27.6867 83.6766 23.7623 83.6766 19.8379C83.6766 17.0103 81.2989 14.6947 78.4168 14.6947H69.6745L68.1133 17.9854H76.7836C78.2487 17.9854 79.5697 19.131 79.5697 20.6179V31.6111ZM62.4452 8.52775V31.6111H66.5522V8.52775H62.4452ZM28.1244 31.6111H32.2314C32.2314 27.6867 32.2314 23.7623 32.2314 19.8379C32.2314 17.0103 29.8536 14.6947 26.9715 14.6947C18.8537 14.6947 8.11788 14.6947 0 14.6947V31.6111H4.10698V18.5947C4.10698 18.2291 4.49126 17.961 4.8275 17.961C7.22924 17.961 10.9279 17.961 13.3297 17.961C13.6659 17.961 14.0502 18.2291 14.0502 18.5947V31.6111H18.1572V18.5947C18.1572 18.2291 18.5414 17.961 18.8777 17.961C20.5829 17.961 23.6091 17.961 25.3384 17.961C26.8034 17.961 28.1244 19.1066 28.1244 20.5935V31.6111ZM166.345 14.6703H156.017C153.135 14.6703 150.757 16.986 150.757 19.8135V31.5868H154.864C154.864 27.9305 154.864 24.2498 154.864 20.5935C154.864 19.1066 156.185 17.961 157.65 17.961H164.783L166.345 14.6703ZM113.674 14.6703C116.556 14.6703 118.934 16.986 118.934 19.8135V31.5868H114.827C114.827 27.9305 114.827 24.2498 114.827 20.5935C114.827 19.1066 113.506 17.961 112.041 17.961H102.146V31.6111H98.039V14.6947C103.227 14.6947 108.439 14.6703 113.674 14.6703ZM88.7923 15.7428L92.8993 13.3541V31.5868H88.7923V15.7428ZM92.9233 10.9897V8.479H88.8164V13.3541L92.9233 10.9897ZM169.227 14.6703H181.956C184.838 14.6703 187.216 16.986 187.216 19.8135V31.5868H168.146C166.393 31.5868 164.952 30.173 164.952 28.4424C164.952 27.0773 164.952 25.7123 164.952 24.3473C164.952 22.7385 166.296 21.4223 167.93 21.4223H178.497L177.368 23.8111H169.587C169.251 23.8111 168.866 24.0792 168.866 24.4448C168.866 25.5173 168.866 26.5898 168.866 27.6623C168.866 28.028 169.251 28.2961 169.587 28.2961H183.085V20.5691C183.085 19.0822 181.764 17.9366 180.299 17.9366H167.641L169.227 14.6703Z" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M213.635 4.89609H214.283C215.172 4.89609 215.772 5.06672 215.604 6.09048C215.46 6.94362 215.004 7.21174 214.428 7.21174H211.906C212.098 5.96861 212.17 4.89609 213.635 4.89609ZM189.449 1.92231H192.476C193.845 1.92231 194.493 2.48294 194.277 3.87233C194.037 5.45673 192.74 5.84673 191.347 5.84673H188.873L189.449 1.92231ZM191.155 6.65112L193.364 11.063H194.973L192.548 6.48049C194.037 6.30986 195.31 5.87111 195.622 3.87233C195.862 2.21482 195.021 0.97168 193.172 0.97168H188.201C187.696 4.33547 187.192 7.69925 186.711 11.063H188.152L188.801 6.67549H191.155V6.65112ZM208.351 4.11609L207.847 4.96922C207.006 4.96922 206.021 4.96922 205.181 4.96922C204.797 4.96922 204.292 4.9936 204.052 5.21297C203.812 5.40798 203.692 5.87111 203.788 6.18798C203.908 6.60236 204.412 6.72424 204.869 6.84612L207.126 7.38237C208.207 7.6505 208.807 8.35738 208.591 9.50302C208.351 10.7705 207.486 11.1118 206.31 11.1118H201.698L202.203 10.2587H205.301C206.166 10.2587 206.958 10.2343 207.15 9.21052C207.294 8.45489 206.502 8.18676 205.925 8.04051L203.692 7.50425C202.707 7.2605 202.155 6.62674 202.347 5.60298C202.563 4.43297 203.331 4.11609 204.412 4.11609H208.351ZM198.936 1.77606H200.377L200.233 2.65357L198.672 3.55546L198.936 1.77606ZM198.504 4.74985L200.065 3.84796L198.984 11.0387H197.567L198.504 4.74985ZM210.585 7.21174C210.321 9.03989 209.984 11.0874 212.65 11.0874H215.628L216.133 10.2343H213.515C211.593 10.2343 211.521 9.47865 211.762 7.96738H214.74C216.109 7.96738 216.733 7.6505 216.973 6.06611C217.19 4.77422 216.061 3.99421 214.836 3.99421H213.611C211.449 4.01859 210.897 5.40798 210.585 7.21174Z" />
+            </svg>
+          </a>
+        </div>
+        <div class="hamburger">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="javascript:;">rise</a></li>
+            <li class="has-child"><a href="javascript:;">about us</a>
+              <div class="mega-menu">
+                <div class="wrap">
+                  <div class="sub-nav-wrap">
+                    <ul>
+                      <li><a href="javascript:;">Our Business Verticals</a></li>
+                      <li><a href="javascript:;">Our Brands</a></li>
+                      <li><a href="javascript:;">Global Presence</a></li>
+                    </ul>
+                  </div>
+                  <div class="imgage-wrap"><img src="img/navigation-image-2.jpg" alt=""></div>
+                </div>
+              </div>
+            </li>
+            <li class="has-child"><a href="javascript:;">our businesses</a>
+              <div class="mega-menu">
+                <div class="wrap">
+                  <div class="sub-nav-wrap">
+                    <ul>
+                      <li><a href="javascript:;">Reports</a></li>
+                      <li><a href="javascript:;">Regulatory Filings</a></li>
+                      <li><a href="javascript:;">Policies</a></li>
+                      <li><a href="javascript:;">Announcements</a></li>
+                      <li><a href="javascript:;">Board of DIrectors</a></li>
+                    </ul>
+                  </div>
+                  <div class="imgage-wrap"><img src="img/navigation-image-3.jpg" alt=""></div>
+                </div>
+              </div>
+            </li>
+            <li class="has-child"><a href="javascript:;">investor relations</a>
+              <div class="mega-menu">
+                <div class="wrap">
+                  <div class="sub-nav-wrap">
+                    <ul>
+                      <li><a href="javascript:;">Press Release</a></li>
+                      <li><a href="javascript:;">In the News</a></li>
+                      <li><a href="javascript:;">Stories</a></li>
+                      <li><a href="javascript:;">Media Resources</a></li>
+                      <li><a href="javascript:;">Hear from Leaders</a></li>
+                    </ul>
+                  </div>
+                  <div class="imgage-wrap"><img src="img/navigation-image-4.jpg" alt=""></div>
+                </div>
+              </div>
+            </li>
+            <li class="has-child"><a href="javascript:;">newsroom</a>
+              <div class="mega-menu">
+                <div class="wrap">
+                  <div class="sub-nav-wrap">
+                    <ul>
+                      <li><a href="javascript:;">Press Release</a></li>
+                      <li><a href="javascript:;">In the News</a></li>
+                      <li><a href="javascript:;">Stories</a></li>
+                      <li><a href="javascript:;">Media Resources</a></li>
+                      <li><a href="javascript:;">Hear from Leaders</a></li>
+                    </ul>
+                  </div>
+                  <div class="imgage-wrap"><img src="img/navigation-image-1.jpg" alt=""></div>
+                </div>
+              </div>
+            </li>
+            <div class="menu-bg-overlay"></div>
+            <li><a href="javascript:;">careers</a></li>
+          </ul>
+          
+        </nav>
+        <div class="icon-nav">
+          <ul>
+            <li class="mail">
+              <a href="javascript:;">
+                <svg viewBox="0 0 31 19" fill="none">
+                  <path d="M29.9477 0.572266H1.43305C1.11728 0.572266 0.849609 0.822476 0.849609 1.1421V17.4193C0.849609 17.7388 1.11731 17.9889 1.43305 17.9889H29.9445C30.2639 17.9889 30.5279 17.7382 30.5279 17.4193L30.5281 1.14366L30.4031 1.1421L30.5281 1.1421V1.14285C30.5317 0.82208 30.2629 0.572266 29.9478 0.572266H29.9477ZM15.6902 10.4189L3.25459 1.71473H28.1259L15.6902 10.4189ZM2.01965 16.8494V2.25341L15.3483 11.5833C15.3484 11.5833 15.3485 11.5834 15.3486 11.5835C15.4517 11.6566 15.5702 11.6906 15.6902 11.6906C15.8101 11.6906 15.9287 11.6566 16.0317 11.5835C16.0319 11.5834 16.032 11.5834 16.0321 11.5833L29.3607 2.25341V16.8494H2.01965Z" stroke-width="0.25"/>
+                  </svg>
+              </a>
+            </li>
+            <li class="search">
+              <a href="javascript:;">
+                <svg viewBox="0 0 21 21" fill="none" class="lens">
+                  <path d="M15.0934 2.73157L15.0934 2.73156C11.6883 -0.67354 6.14543 -0.67354 2.74033 2.73156C-0.666039 6.13793 -0.666063 11.6795 2.74035 15.0847C4.38993 16.7342 6.58308 17.6433 8.91623 17.6433C10.9916 17.6433 12.9533 16.9181 14.5221 15.5975L19.5217 20.5972C19.6721 20.7476 19.8687 20.8212 20.0632 20.8212C20.2588 20.8212 20.4554 20.7476 20.6059 20.5972C20.905 20.2981 20.905 19.8121 20.6059 19.513L15.6062 14.5132C18.4815 11.0845 18.3159 5.95535 15.0934 2.73157ZM14.0092 14.0004C12.6491 15.3606 10.8404 16.1098 8.91623 16.1098C6.99211 16.1098 5.18468 15.3606 3.82452 14.0004C1.01633 11.1923 1.01633 6.62394 3.82452 3.81575C5.22857 2.41171 7.07147 1.71024 8.91623 1.71024C10.7609 1.71024 12.6052 2.41296 14.0092 3.81575C16.8174 6.62394 16.8174 11.1923 14.0092 14.0004Z" stroke-width="0.25"/>
+                  </svg>
+                <svg  viewBox="0 0 50 50" class="close"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg>
+              </a>
+              <div class="search-screen-wrap">
+                <div class="wrap">
+                  <div class="search-wrap">
+                    <div class="search-icon">
+                    <svg viewBox="0 0 21 21" fill="none">
+                      <path d="M15.0934 2.73157L15.0934 2.73156C11.6883 -0.67354 6.14543 -0.67354 2.74033 2.73156C-0.666039 6.13793 -0.666063 11.6795 2.74035 15.0847C4.38993 16.7342 6.58308 17.6433 8.91623 17.6433C10.9916 17.6433 12.9533 16.9181 14.5221 15.5975L19.5217 20.5972C19.6721 20.7476 19.8687 20.8212 20.0632 20.8212C20.2588 20.8212 20.4554 20.7476 20.6059 20.5972C20.905 20.2981 20.905 19.8121 20.6059 19.513L15.6062 14.5132C18.4815 11.0845 18.3159 5.95535 15.0934 2.73157ZM14.0092 14.0004C12.6491 15.3606 10.8404 16.1098 8.91623 16.1098C6.99211 16.1098 5.18468 15.3606 3.82452 14.0004C1.01633 11.1923 1.01633 6.62394 3.82452 3.81575C5.22857 2.41171 7.07147 1.71024 8.91623 1.71024C10.7609 1.71024 12.6052 2.41296 14.0092 3.81575C16.8174 6.62394 16.8174 11.1923 14.0092 14.0004Z" stroke-width="0.25"/>
+                      </svg>
+                    </div>
+                    <input type="text" class="input-text">
+                    <button class="submit-button">
+                      <div class="label">
+                        Submit
+                      </div>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.3536 4.35355C11.5488 4.15829 11.5488 3.84171 11.3536 3.64645L8.17157 0.464465C7.97631 0.269203 7.65973 0.269203 7.46447 0.464465C7.2692 0.659728 7.2692 0.97631 7.46447 1.17157L10.2929 4L7.46447 6.82843C7.2692 7.02369 7.2692 7.34027 7.46447 7.53553C7.65973 7.7308 7.97631 7.7308 8.17157 7.53553L11.3536 4.35355ZM4.37114e-08 4.5L11 4.5L11 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z" fill="black"/>
+                      </svg></button>
+                  </div>
+                  <div class="search-suggestions-wrap">
+                    <div class="label">Popular Keywords:</div>
+                    <div class="tokens-wrap">
+                      <ul>
+                        <li>Business</li>
+                        <li>FY 21</li>
+                        <li>Brands</li>
+                        <li>XUV700</li>
+                        <li>Global</li>
+                        <li>Nanhi Kali</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="search-suggestions-wrap">
+                    <div class="label">Recommended for you:</div>
+                    <div class="tokens-wrap">
+                      <ul>
+                        <li>Annual Report 2021 - 2022</li>
+                        <li>Leadership Announcement</li>
+                        <li>Latest Press Release</li>
+                        <li>Brand Guidelines</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section m-0 p-0">
+    <div class="beam-spotlight">
+      <div class="image">
+        <picture class="slide-bgimg">
+          <source media="(max-width: 799px)" srcset="img/our-business-automotive-spotlight-mob.jpg">
+          <source media="(min-width: 800px)" srcset="img/our-business-automotive-spotlight.jpg">
+          <img src="img/our-business-automotive-spotlight.jpg" alt="">
+        </picture>
+        <div class="content-wrap">
+          <div class="content text-center text-lg-start">
+            <h2 class="heading font-medium font-size-tb">Automotive</h2>
+            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum id magna aliquam, accumsan lacus eget, rutrum erat.</p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+
+  <section class="section what-we-do-wrap">
+    <div class="our-business-verticals template-2">
+      <div class="container">
+        <div class="row row-cols-lg-3 row-cols-1 g-3 justify-content-center">
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="100">
+              <div class="image"><img src="img/our-business-automotive-thumb-1.jpg" class="img-fluid" alt=""></div>
+              <div class="title">SUV <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="400">
+              <div class="image"><img src="img/our-business-automotive-thumb-2.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Electric SUV <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="700">
+              <div class="image"><img src="img/our-business-automotive-thumb-3.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Electric 3-Wheelers <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="1000">
+              <div class="image"><img src="img/our-business-automotive-thumb-4.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Pick-Ups <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="1300">
+              <div class="image"><img src="img/our-business-automotive-thumb-5.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Trucks & Buses <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="1500">
+              <div class="image"><img src="img/our-business-automotive-thumb-6.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Electric Hyper Car <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="1800">
+              <div class="image"><img src="img/our-business-automotive-thumb-7.jpg" class="img-fluid" alt=""></div>
+              <div class="title">Auto, North America <img src="img/external-link.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="wrap" data-aos="fade-up" data-aos-delay="2100">
+              <div class="image"><img src="img/our-business-automotive-thumb-8.jpg" class="img-fluid" alt=""></div>
+              <div class="title">2-Wheeler, International <img src="img/tilt-white-arrow.svg" ></div>
+              <a href="javascript:;" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row g-3 justify-content-center mt-5">
+            <div class="col-12 col-lg-6">
+                <div class="wrap" data-aos="fade-up" data-aos-delay="100">
+                    <div class="image"><img src="img/our-business-leasure-thumb-1.jpg" class="img-fluid" alt=""></div>
+                    <div class="title-wrap">
+                        <div class="title">2-Wheeler, International</div>
+                        <div class="button-wrap">
+                            <a href="javascript:;" class="btn btn-primary">Club Mahindra <svg viewBox="0 0 12 12" fill="none" >
+                                <path d="M7 0V1H10.295L3 8.295L3.705 9L11 1.705V5H12V0H7Z" />
+                                <rect y="2" width="1" height="10" />
+                                <rect x="9" y="7" width="1" height="5" />
+                                <rect y="11" width="10" height="1" />
+                                <rect y="2" width="5" height="1" />
+                                </svg></a>
+                                <a href="javascript:;" class="btn btn-primary">Holiday Oy <svg viewBox="0 0 12 12" fill="none" >
+                                    <path d="M7 0V1H10.295L3 8.295L3.705 9L11 1.705V5H12V0H7Z" />
+                                    <rect y="2" width="1" height="10" />
+                                    <rect x="9" y="7" width="1" height="5" />
+                                    <rect y="11" width="10" height="1" />
+                                    <rect y="2" width="5" height="1" />
+                                    </svg></a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="wrap" data-aos="fade-up" data-aos-delay="400">
+                    <div class="image"><img src="img/our-business-leasure-thumb-2.jpg" class="img-fluid" alt=""></div>
+                    <div class="title">Leisure Experiences <img src="img/external-link.svg" ></div>
+                    <a href="javascript:;" class="stretched-link"></a>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="wrap" data-aos="fade-up" data-aos-delay="700">
+                  <div class="image"><img src="img/our-business-automotive-thumb-8.jpg" class="img-fluid" alt=""></div>
+                  <div class="title">2-Wheeler, International <img src="img/tilt-white-arrow.svg" ></div>
+                  <a href="javascript:;" class="stretched-link"></a>
+                </div>
+              </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section class="section grey-bg discoverSection media-resources">
+    <div class="container">
+        <div class="section-header text-center pb-4">
+          <h2 class="heading font-regular" data-aos="fade-up" data-aos-offset="100" data-aos-duration="650" data-aos-easing="ease-in-out">quick links</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-12 mb-lg-0 mb-3 discover-block">
+            <div class="positin-relative"  data-aos="fade-up" data-aos-delay="100">
+              <div class="discoverImg no-tint"><img src="img/our-business-automotive-quick-links-1.jpg" width="auto" height="auto" alt="" /></div>
+              <div class="discoverLink text-lg-start text-center"><span>Farm Equipment <svg viewBox="0 0 12 12" fill="none">
+                  <path d="M4 0V1H10.295L0 11.295L0.705 12L11 1.705V8H12V0H4Z" fill="white"/>
+                  </svg></span></div>
+              <a href="" class="stretched-link"></a>
+            </div>
+          </div>
+  
+          <div class="col-lg-4 col-12 mb-lg-0 mb-3 discover-block">
+            <div class="positin-relative" data-aos="fade-up" data-aos-delay="400">
+              <div class="discoverImg no-tint"><img src="img/our-business-automotive-quick-links-2.jpg" width="auto" height="auto" alt="" /></div>
+              <div class="discoverLink text-lg-start text-center"><span>Financial services <svg viewBox="0 0 12 12" fill="none">
+                  <path d="M4 0V1H10.295L0 11.295L0.705 12L11 1.705V8H12V0H4Z" fill="white"/>
+                  </svg></span></div>
+              <a href="" class="stretched-link"></a>
+            </div>
+          </div>
+  
+          <div class="col-lg-4 col-12 discover-block">
+            <div class="positin-relative" data-aos="fade-up" data-aos-delay="700">
+              <div class="discoverImg no-tint"><img src="img/our-business-automotive-quick-links-3.jpg" width="auto" height="auto" alt="" /></div>
+              <div class="discoverLink text-lg-start text-center"><span>Aerostructures and security <svg viewBox="0 0 12 12" fill="none">
+                  <path d="M4 0V1H10.295L0 11.295L0.705 12L11 1.705V8H12V0H4Z" fill="white"/>
+                  </svg></span></div>
+              <a href="" class="stretched-link"></a>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  </section>
+
+  <footer class="footer-main">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col justify-content-center d-flex">
+          <div class="logo">
+            <a href="javascript:;">
+              <svg viewBox="0 0 217 32" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40.1331 14.6703H52.8863C55.7684 14.6703 58.1461 16.986 58.1461 19.8135V31.5868H39.0763C37.323 31.5868 35.882 30.173 35.882 28.4424C35.882 27.0773 35.882 25.7123 35.882 24.3473C35.882 22.7385 37.227 21.4223 38.8602 21.4223H49.4278L48.299 23.8111H40.5174C40.1811 23.8111 39.7968 24.0792 39.7968 24.4448C39.7968 25.5173 39.7968 26.5898 39.7968 27.6623C39.7968 28.028 40.1811 28.2961 40.5174 28.2961H54.0151V20.5691C54.0151 19.0822 52.6942 17.9366 51.2291 17.9366H38.5719L40.1331 14.6703ZM144.873 8.52775V31.6111H126.284C124.53 31.6111 123.089 30.1974 123.089 28.4667C123.089 25.5904 123.089 22.7142 123.089 19.8135C123.089 16.986 125.467 14.6703 128.349 14.6703H138.941L137.38 17.961H129.982C128.517 17.961 127.196 19.1066 127.196 20.5935C127.196 22.9579 127.196 25.3223 127.196 27.6867C127.196 28.0523 127.58 28.3205 127.917 28.3205H140.742V8.52775H144.873ZM79.5697 31.6111H83.6766C83.6766 27.6867 83.6766 23.7623 83.6766 19.8379C83.6766 17.0103 81.2989 14.6947 78.4168 14.6947H69.6745L68.1133 17.9854H76.7836C78.2487 17.9854 79.5697 19.131 79.5697 20.6179V31.6111ZM62.4452 8.52775V31.6111H66.5522V8.52775H62.4452ZM28.1244 31.6111H32.2314C32.2314 27.6867 32.2314 23.7623 32.2314 19.8379C32.2314 17.0103 29.8536 14.6947 26.9715 14.6947C18.8537 14.6947 8.11788 14.6947 0 14.6947V31.6111H4.10698V18.5947C4.10698 18.2291 4.49126 17.961 4.8275 17.961C7.22924 17.961 10.9279 17.961 13.3297 17.961C13.6659 17.961 14.0502 18.2291 14.0502 18.5947V31.6111H18.1572V18.5947C18.1572 18.2291 18.5414 17.961 18.8777 17.961C20.5829 17.961 23.6091 17.961 25.3384 17.961C26.8034 17.961 28.1244 19.1066 28.1244 20.5935V31.6111ZM166.345 14.6703H156.017C153.135 14.6703 150.757 16.986 150.757 19.8135V31.5868H154.864C154.864 27.9305 154.864 24.2498 154.864 20.5935C154.864 19.1066 156.185 17.961 157.65 17.961H164.783L166.345 14.6703ZM113.674 14.6703C116.556 14.6703 118.934 16.986 118.934 19.8135V31.5868H114.827C114.827 27.9305 114.827 24.2498 114.827 20.5935C114.827 19.1066 113.506 17.961 112.041 17.961H102.146V31.6111H98.039V14.6947C103.227 14.6947 108.439 14.6703 113.674 14.6703ZM88.7923 15.7428L92.8993 13.3541V31.5868H88.7923V15.7428ZM92.9233 10.9897V8.479H88.8164V13.3541L92.9233 10.9897ZM169.227 14.6703H181.956C184.838 14.6703 187.216 16.986 187.216 19.8135V31.5868H168.146C166.393 31.5868 164.952 30.173 164.952 28.4424C164.952 27.0773 164.952 25.7123 164.952 24.3473C164.952 22.7385 166.296 21.4223 167.93 21.4223H178.497L177.368 23.8111H169.587C169.251 23.8111 168.866 24.0792 168.866 24.4448C168.866 25.5173 168.866 26.5898 168.866 27.6623C168.866 28.028 169.251 28.2961 169.587 28.2961H183.085V20.5691C183.085 19.0822 181.764 17.9366 180.299 17.9366H167.641L169.227 14.6703Z" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M213.635 4.89609H214.283C215.172 4.89609 215.772 5.06672 215.604 6.09048C215.46 6.94362 215.004 7.21174 214.428 7.21174H211.906C212.098 5.96861 212.17 4.89609 213.635 4.89609ZM189.449 1.92231H192.476C193.845 1.92231 194.493 2.48294 194.277 3.87233C194.037 5.45673 192.74 5.84673 191.347 5.84673H188.873L189.449 1.92231ZM191.155 6.65112L193.364 11.063H194.973L192.548 6.48049C194.037 6.30986 195.31 5.87111 195.622 3.87233C195.862 2.21482 195.021 0.97168 193.172 0.97168H188.201C187.696 4.33547 187.192 7.69925 186.711 11.063H188.152L188.801 6.67549H191.155V6.65112ZM208.351 4.11609L207.847 4.96922C207.006 4.96922 206.021 4.96922 205.181 4.96922C204.797 4.96922 204.292 4.9936 204.052 5.21297C203.812 5.40798 203.692 5.87111 203.788 6.18798C203.908 6.60236 204.412 6.72424 204.869 6.84612L207.126 7.38237C208.207 7.6505 208.807 8.35738 208.591 9.50302C208.351 10.7705 207.486 11.1118 206.31 11.1118H201.698L202.203 10.2587H205.301C206.166 10.2587 206.958 10.2343 207.15 9.21052C207.294 8.45489 206.502 8.18676 205.925 8.04051L203.692 7.50425C202.707 7.2605 202.155 6.62674 202.347 5.60298C202.563 4.43297 203.331 4.11609 204.412 4.11609H208.351ZM198.936 1.77606H200.377L200.233 2.65357L198.672 3.55546L198.936 1.77606ZM198.504 4.74985L200.065 3.84796L198.984 11.0387H197.567L198.504 4.74985ZM210.585 7.21174C210.321 9.03989 209.984 11.0874 212.65 11.0874H215.628L216.133 10.2343H213.515C211.593 10.2343 211.521 9.47865 211.762 7.96738H214.74C216.109 7.96738 216.733 7.6505 216.973 6.06611C217.19 4.77422 216.061 3.99421 214.836 3.99421H213.611C211.449 4.01859 210.897 5.40798 210.585 7.21174Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="footer-menu">
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">Rise</a></div>
+            </div>
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">Our Business</a></div>
+            </div>
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">Our Brands</a></div>
+            </div>
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">contact us</a></div>
+            </div>
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">Newsroom</a></div>
+            </div>
+            <div class="link-blocks">
+              <div class="head"><a href="javascript:;">Careers</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5 align-items-lg-end">
+        <div class="col-12 col-lg-6">
+          <ul class="secondary-nav">
+            <li><a href="javascript:;">Terms of use</a></li>
+            <li><a href="javascript:;">Disclaimer</a></li>
+            <li><a href="javascript:;">Privacy Policy</a></li>
+            <li><a href="javascript:;">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6 justify-content-end">
+          <ul class="social-wrap">
+            <li class="fb"><a href="javascript:;">
+              <svg width="11" height="20" viewBox="0 0 11 20" fill="none">
+                <path d="M10.5809 6.8639H7.20192V4.90736C7.20192 4.17259 7.75352 4.00128 8.14202 4.00128C8.52965 4.00128 10.5265 4.00128 10.5265 4.00128V0.771082L7.24258 0.759766C3.59707 0.759766 2.76746 3.16895 2.76746 4.71069V6.8639H0.65918V10.1924H2.76746C2.76746 14.4641 2.76746 19.6111 2.76746 19.6111H7.20192C7.20192 19.6111 7.20192 14.4134 7.20192 10.1924H10.1942L10.5809 6.8639Z" />
+                </svg>                  
+            </a></li>
+            <li class="tw"><a href="javascript:;"><svg width="22" height="19" viewBox="0 0 22 19" fill="none">
+              <path d="M21.1818 2.72423C20.4157 3.08319 19.5917 3.32542 18.7266 3.43408C19.6094 2.87648 20.287 1.99302 20.6063 0.939692C19.7802 1.45656 18.8658 1.83185 17.8918 2.03419C17.1122 1.15796 16.0012 0.610352 14.7718 0.610352C12.4111 0.610352 10.4971 2.62904 10.4971 5.11888C10.4971 5.47218 10.5349 5.8161 10.6078 6.14607C7.05509 5.95831 3.90507 4.16356 1.79677 1.43564C1.42893 2.10128 1.21809 2.87563 1.21809 3.70222C1.21809 5.26631 1.97272 6.64617 3.1197 7.45491C2.41918 7.43118 1.75976 7.22861 1.18358 6.89075C1.1832 6.90949 1.1832 6.92845 1.1832 6.94785C1.1832 9.13186 2.6567 10.954 4.61241 11.3685C4.25366 11.4714 3.87597 11.5267 3.48606 11.5267C3.21034 11.5267 2.9427 11.4986 2.68166 11.4457C3.22586 13.2367 4.80447 14.5404 6.67469 14.5767C5.21172 15.786 3.36873 16.5068 1.36575 16.5068C1.02087 16.5068 0.680742 16.4852 0.346191 16.4438C2.23828 17.7232 4.48497 18.4695 6.89894 18.4695C14.7618 18.4695 19.0611 11.5994 19.0611 5.6416C19.0611 5.44644 19.0574 5.2515 19.0492 5.0583C19.8841 4.42273 20.6092 3.62862 21.1818 2.72423Z" />
+              </svg>
+              </a></li>
+            <li class="inst"><a href="javascript:;"><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.9248 10.5175C5.9248 7.76578 8.1727 5.55664 10.8857 5.55664C13.5986 5.55664 15.8465 7.80453 15.8465 10.5175C15.8465 13.2305 13.6374 15.4784 10.8857 15.4784C8.13394 15.4784 5.9248 13.2692 5.9248 10.5175ZM7.70801 10.5179C7.70801 12.262 9.14201 13.696 10.8861 13.696C12.6301 13.696 14.0641 12.262 14.0641 10.5179C14.0641 8.77384 12.6301 7.33984 10.8861 7.33984C9.14201 7.33984 7.70801 8.77384 7.70801 10.5179Z" fill="url(#paint0_linear_717_16469)"/>
+              <circle cx="15.8467" cy="5.55663" r="0.992173" fill="url(#paint1_linear_717_16469)"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0063 0.595703C16.6866 0.595703 18.1669 1.1558 19.2071 2.23599C20.2472 3.27617 20.8073 4.71642 20.8073 6.39672V14.6382C20.8073 16.3585 20.2472 17.8387 19.167 18.8789C18.1269 19.8791 16.6866 20.4392 14.9663 20.4392H6.80489C5.1646 20.4392 3.72435 19.9191 2.64416 18.8789C1.52397 17.7987 0.963867 16.3184 0.963867 14.5981V6.39672C0.963867 2.91611 3.28427 0.595703 6.76488 0.595703H15.0063ZM17.8873 17.5592C18.6074 16.879 18.9675 15.8789 18.9675 14.6387H19.0475V6.39721C19.0475 5.23701 18.6475 4.23684 17.9673 3.51671C17.2472 2.79659 16.247 2.43652 15.0468 2.43652H6.80539C5.60518 2.43652 4.56499 2.79659 3.88488 3.4767C3.16475 4.19683 2.80469 5.19701 2.80469 6.39721V14.5986C2.80469 15.8389 3.16475 16.839 3.88488 17.5592C4.605 18.2393 5.60518 18.5993 6.80539 18.5993H14.9668C16.167 18.5993 17.1672 18.2393 17.8873 17.5592Z" fill="url(#paint2_linear_717_16469)"/>
+              <defs>
+              <linearGradient id="paint0_linear_717_16469" x1="14.1929" y1="6.09717" x2="7.69287" y2="15.5972" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A028AB"/>
+              <stop offset="0.46875" stop-color="#EE413F"/>
+              <stop offset="1" stop-color="#FDB00D"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear_717_16469" x1="16.5081" y1="4.67256" x2="15.2081" y2="6.57256" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A028AB"/>
+              <stop offset="0.46875" stop-color="#EE413F"/>
+              <stop offset="1" stop-color="#FDB00D"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear_717_16469" x1="17.5" y1="1.67676" x2="4.5" y2="20.6768" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#A028AB"/>
+              <stop offset="0.46875" stop-color="#EE413F"/>
+              <stop offset="1" stop-color="#FDB00D"/>
+              </linearGradient>
+              </defs>
+              </svg>
+              </a></li>
+            <li class="yt"><a href="javascript:;"><svg width="27" height="19" viewBox="0 0 27 19" fill="none">
+              <path d="M25.8286 3.03876C25.532 1.94099 24.658 1.07659 23.5481 0.783235C21.5361 0.25 13.4694 0.25 13.4694 0.25C13.4694 0.25 5.40274 0.25 3.39077 0.783235C2.28106 1.07659 1.40685 1.94099 1.11019 3.03876C0.571289 5.02839 0.571289 9.17966 0.571289 9.17966C0.571289 9.17966 0.571289 13.3309 1.11019 15.3204C1.40685 16.4181 2.28106 17.2827 3.39077 17.5761C5.40274 18.1091 13.4694 18.1091 13.4694 18.1091C13.4694 18.1091 21.5361 18.1091 23.5481 17.5761C24.658 17.2827 25.532 16.4181 25.8286 15.3204C26.3678 13.3309 26.3678 9.17966 26.3678 9.17966C26.3678 9.17966 26.3678 5.02839 25.8286 3.03876Z" />
+              <path d="M11.4854 13.1483L18.4306 9.17963L11.4854 5.21094L11.4854 13.1483Z" id="bg"/>
+              </svg>
+              </a></li>
+            <li class="in"><a href="javascript:;"><svg width="17" height="18" viewBox="0 0 17 18" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.132812 2.4999C0.132812 1.2148 1.07422 0.250977 2.43404 0.250977C3.79385 0.250977 4.63066 1.2148 4.63066 2.4999C4.63066 3.785 3.68925 4.74883 2.32944 4.74883C0.969622 4.74883 0.132812 3.785 0.132812 2.4999ZM0.132812 5.87207H3.5062V17.1167H0.132812V5.87207ZM12.8068 5.87207C10.8057 5.87207 9.94804 6.96026 9.47157 7.68572V6.14412H5.75513C5.85042 7.14162 5.75513 17.1167 5.75513 17.1167H9.47157V10.9503C9.47157 10.5876 9.47157 10.3155 9.56686 10.0435C9.85275 9.40869 10.4245 8.68323 11.4727 8.68323C12.8068 8.68323 13.3786 9.68073 13.3786 11.1317V17.1167H16.9998V10.7689C16.9998 7.41367 15.1892 5.87207 12.8068 5.87207Z" />
+              </svg>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-wrap">
+      Copyright&copy; <script>document.write(new Date().getFullYear())</script> Mahindra&Mahindra Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

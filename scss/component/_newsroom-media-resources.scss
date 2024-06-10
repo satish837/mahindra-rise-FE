@@ -1,0 +1,140 @@
+.mr-section {
+    .heading {
+        h5 {
+            font-family: $body;
+            font-size: 1.25rem;
+            color: $black;
+            line-height: 1.68;
+            text-transform: capitalize;
+            margin-bottom: 0;
+        }
+
+        @include tabletPotrait {
+            display: none;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    // .col{
+    //     &.white-bg{
+    //         background: $white;
+    //         border: 1px solid #cccccc;
+    //     }
+    // }
+    .media-left-nev {
+        padding: 30px 20px;
+
+        ul {
+            li {
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom: 40px;
+
+                a {
+                    font-family: $body;
+                    color: #000;
+                    text-decoration: none;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: $accent-red;
+                    }
+
+                    &.active {
+                        color: $accent-red;
+                    }
+                }
+            }
+        }
+    }
+
+    .white-bg-border {
+        background: $white;
+        border: 1px solid #cccccc;
+        width: 100%;
+        position: relative;
+
+        @include mobile {
+            border: 0;
+        }
+    }
+
+    .discoverSection.in-the-new .iconImg {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-left: 3px;
+        }
+    }
+
+    .mob-heading {
+        display: none;
+
+        @include mobile {
+            display: block;
+            font-weight: 500;
+            font-size: 16px;
+            color: $black;
+            margin: 10px 0 20px;
+        }
+    }
+}
+
+.search-component {
+    &.mr-section {
+        .search-list {
+            li {
+                border: 0;
+                border-bottom: 1px solid #CCCCCC;
+                padding: 30px 0;
+                margin: 0 40px;
+
+                @include mobile {
+                    margin: 0 25px;
+                }
+
+                &:last-child {
+                    border: 0;
+                }
+
+                img {
+                    width: auto;
+                }
+
+                .search-content {
+                    .description {
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+        }
+
+        .mob-heading-filter {
+            background: $white;
+        }
+
+        .sidebar-filter ul {
+            border: 0;
+            padding: 0;
+        }
+
+        .sidebar-filter {
+            top: 47px;
+            overflow: unset;
+            z-index: 9;
+            max-height: unset;
+
+            @include mobile {
+                background: $white;
+                border: 1px solid #cccccc;
+            }
+        }
+    }
+}

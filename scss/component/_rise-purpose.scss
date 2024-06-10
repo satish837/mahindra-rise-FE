@@ -1,0 +1,9 @@
+.rise-purpose{
+    .red-sub-head{
+        color: $accent-red;
+        padding: 0 10%;
+        @include mobile{
+            padding: 0;
+        }
+    }
+}

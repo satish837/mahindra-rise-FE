@@ -1,0 +1,111 @@
+.subscribeSection {
+    background: $white;
+    padding: 50px 0;
+
+    @include mobile {
+        padding: 50px 0;
+    }
+
+    .subscribeBox {
+        border: 1px solid #BABABA;
+        padding: 40px 80px;
+        display: flex;
+
+        @include mobile {
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: $black;
+            text-transform: uppercase;
+
+            @include mobile {
+                text-align: center;
+            }
+        }
+
+        .sub-input-box {
+            width: calc(100% - 330px);
+            margin-left: 60px;
+
+            @include mobile {
+                width: 100%;
+                margin: 0 0 10px;
+            }
+        }
+
+        form {
+            .forrm-group {
+                display: flex;
+
+                @include tabletPotrait {
+                    justify-content: center;
+                }
+
+                @include mobile {
+                    justify-content: center;
+                    margin-top: 20px;
+                    flex-wrap: wrap;
+                }
+
+                .form-control {
+                    background: #E8E8E8;
+                    border: 1px solid #E8E8E8;
+                    font-family: $body;
+                    font-size: .875rem;
+                    color: $black;
+                    line-height: 1.88;
+                    height: 44px;
+                    // max-width: 632px;
+                    width: calc(100% - 148px);
+                    border-radius: 0;
+
+                    @include mobile {
+                        width: 100%;
+                        max-width: 100%;
+                        text-align: center;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                button {
+                    font-family: $body;
+                    font-size: 1rem;
+                    color: $white;
+                    font-weight: 500;
+                    line-height: 1.18;
+                    padding: 0 15px;
+                    background: $accent-red;
+                    border: 1px solid $accent-red;
+                    height: 44px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 148px;
+
+                    @include mobile {
+                        width: 100%;
+                        margin-top: 14px;
+                    }
+
+                    &:hover {
+                        background-color: #d30529;
+                        border-color: #d30529;
+                    }
+                }
+            }
+        }
+
+        &.white-bg {
+            background: $white;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+.simple-grid-with-icon {
+    .wrap {
+        position: relative;
+
+        .image {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                transition: $base-transition;
+                width: 100%;
+            }
+        }
+
+        .content {
+            position: absolute;
+            width: calc(100% - 4rem);
+            left: 2rem;
+            bottom: 2rem;
+            color: $white;
+            font-weight: 500;
+            z-index: 2;
+
+            .icon {
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-weight: 500;
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+
+    }
+}
+
+.esg-business-grid {
+    .slides {
+        padding: 1rem 0;
+    }
+
+    .wrap {
+        display: flex;
+        background: $white;
+        box-shadow: 0px 0px 28px -5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        flex-wrap: wrap;
+        transition: $base-transition;
+
+        .image {
+            width: 20%;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content-grid {
+            width: 80%;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            .bind {
+                .title {
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    margin-bottom: 0.6rem;
+                }
+
+                p {
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        &:hover {
+            background: $accent-red;
+            transition: $base-transition;
+
+            .bind {
+                color: $white;
+                transition: $base-transition;
+            }
+        }
+    }
+
+    .flickity-page-dots {
+        bottom: auto;
+        width: 100%;
+        left: auto;
+        text-align: center;
+
+        .dot {
+            background: #C4C4C4;
+
+            &.is-selected {
+                background: $accent-red;
+            }
+        }
+    }
+}

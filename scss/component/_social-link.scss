@@ -1,0 +1,204 @@
+.social-links {
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+        flex-wrap: wrap;
+    }
+
+    li {
+        display: flex;
+        font-family: $body;
+        color: $black;
+        font-size: 1rem;
+        line-height: 1.375;
+        align-items: center;
+
+        @include mobile {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        img {
+            margin-right: 15px;
+            width: auto;
+
+            @include mobile {
+                margin-right: 0;
+            }
+        }
+
+        span {
+            @include mobile {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+
+        &+li {
+            margin-left: 6rem;
+
+            @include tabletPotrait {
+                margin-left: 2rem;
+            }
+
+            @include mobile {
+                margin-left: 0;
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.helpline {
+    .grid-layout {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        @include mobile {
+            gap: 0;
+        }
+
+        .slides:nth-child(1) {
+            .wrap {
+                display: flex;
+                flex-wrap: wrap;
+
+                .image-wrap {
+                    width: 68%;
+                    position: relative;
+
+                    @include tabletPotrait {
+                        width: 100%;
+                        overflow: hidden;
+                    }
+
+                    @include mobile {
+                        width: 100%;
+                        overflow: hidden;
+                    }
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        height: 100%;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.77) 100%);
+                    }
+                }
+
+                .content-wrap {
+                    width: 32%;
+                    padding: 2rem;
+                    align-items: center;
+
+                    @include tabletLandscape-max {
+                        display: flex;
+                    }
+
+                    @include tabletPotrait {
+                        width: 100%;
+                    }
+
+                    @include mobile {
+                        width: 100%;
+                        margin-top: 0 !important;
+                    }
+
+                    h3 {
+                        font-family: $body;
+                        font-size: 2.25rem;
+                        text-transform: capitalize;
+                        line-height: 1.16;
+
+                        @include mobile {
+                            font-size: 1.75rem;
+                            line-height: 1.35;
+                        }
+                    }
+
+                    a {
+                        font-family: $body;
+                        font-size: 1rem;
+                        line-height: 2.1;
+                        color: $black;
+                        display: inline-block;
+                        width: 100%;
+                        text-decoration: none;
+                    }
+
+                    .contact-details {
+                        position: relative;
+                        display: flex;
+                        align-items: flex-start;
+
+                        .icon {
+                            height: 23px;
+                            width: 40px;
+                            margin-top: 10px;
+
+                            svg {
+                                width: 23px;
+                                fill: $black;
+                            }
+                        }
+
+                        .details {
+                            width: calc(100% - 40px);
+                        }
+                    }
+
+                    .emails {
+                        position: relative;
+                        padding-left: 41px;
+
+                        &:before {
+                            position: absolute;
+                            content: '';
+                            background: url('../img/email-icon.svg') no-repeat;
+                            height: 16px;
+                            width: 24px;
+                            background-size: 100%;
+                            left: 0;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.work-with-us {
+    .grid-layout {
+        .slides {
+            &:hover {
+                .contact-details {
+                    .icon {
+                        svg {
+                            fill: $white !important;
+                        }
+                    }
+
+                    a {
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,226 @@
+.latest-announcement {
+    padding: 6rem 0;
+    background: $grey-bg;
+
+    @include tabletPotrait {
+        padding: 4.62rem 0;
+    }
+
+    @include mobile {
+        padding: 4.62rem 0;
+    }
+
+    .section-header {
+        padding-bottom: 2.5rem;
+
+        @include tabletPotrait {
+            padding-bottom: 1.37rem;
+        }
+
+        @include mobile {
+            padding-bottom: 45px;
+        }
+    }
+}
+
+.esg-tabs-wrap {
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 30px;
+
+    @include mobile {
+        padding-left: 0.75rem;
+    }
+
+    .flickity-prev-next-button {
+        top: 50%;
+        bottom: auto;
+        border: #565656 solid 1px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+
+        &:after {
+            display: none;
+        }
+
+        svg {
+            color: #565656;
+        }
+
+        &.previous {
+            left: -40px;
+        }
+
+        &.next {
+            right: -70px;
+        }
+    }
+}
+
+.tab-nav {
+    .nav {
+        margin: 0 auto 38px;
+        justify-content: center;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.justify-center {
+            @include tabletPotrait {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                justify-content: flex-start;
+            }
+
+            @include mobile {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 5px;
+                justify-content: flex-start;
+            }
+        }
+
+        li {
+            padding: 0 27px;
+            position: relative;
+            display: flex;
+
+            @include tabletLandscape {
+                flex: 0 0 auto;
+            }
+
+            @include mobile {
+                padding: 0 15px;
+                flex: 0 0 auto;
+            }
+
+            a {
+                font-family: $body;
+                font-size: 1rem;
+                color: $lightBlack;
+                line-height: 1.18;
+                padding: 0;
+                display: inline-block;
+                position: relative;
+
+                &.active {
+                    color: $accent-red;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        background: $black;
+                        height: 0.5px;
+                        left: 0;
+                        bottom: -4px;
+                    }
+                }
+            }
+
+            &+li {
+                &:before {
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    background: $black;
+                    width: 1px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &.mob-dropdown {
+        position: relative;
+
+
+        @include mobile {
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .mob-drop-span {
+            display: none;
+
+            @include mobile {
+                background: $white;
+                border: 1px solid $black;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 9px 16px;
+                width: 100%;
+                text-align: center;
+                position: relative;
+            }
+
+            &:after {
+                content: "";
+
+                @include mobile {
+                    background: url(../img/drop-down.svg) no-repeat center center;
+                    position: absolute;
+                    right: 10px;
+                    z-index: 999;
+                    width: 18px;
+                    height: 10px;
+                }
+            }
+        }
+
+        .nav {
+            @include mobile {
+                flex-wrap: wrap;
+                display: none;
+                position: absolute;
+                z-index: 99;
+                width: calc(100% - 30px);
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+
+            li {
+                @include mobile {
+                    background: $white;
+                    border: 1px solid $black;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 9px 16px;
+                    width: 100%;
+                    text-align: center;
+                    position: relative;
+                }
+
+                &:before {
+                    width: 0;
+                    height: 0;
+                }
+
+                a {
+                    @include mobile {
+                        text-decoration: none;
+                    }
+
+                    &:before {
+                        @include mobile {
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+    }
+}

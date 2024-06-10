@@ -1,0 +1,803 @@
+.main-header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: $base-transition;
+    z-index: 10;
+    background: #0B0B0B;
+
+    &.loader {
+        .bind {
+            opacity: 0;
+            transform: translate(0, 10px);
+        }
+    }
+
+    &.solid {
+        background: #0B0B0B;
+
+        .wrap {
+            @include desktop {
+                padding: 0.5rem 0 1rem 0;
+            }
+        }
+    }
+
+    &.black {
+        background: #0B0B0B;
+    }
+
+    &.nav-up {
+        transform: translate(0, -100%);
+    }
+
+    @include mobile {
+        height: 70px;
+    }
+
+    .wrap {
+        display: flex;
+        align-items: flex-end;
+        padding: 1rem 0 1.5rem 0;
+        transition: $base-transition;
+
+        @include mobile {
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 200px;
+
+            @include ipadLandscape {
+                width: 150px;
+            }
+
+            @include mobile {
+                width: 170px;
+            }
+
+            svg {
+                width: 100%;
+                fill: $white;
+            }
+        }
+
+        .hamburger {
+            width: 30px;
+            display: none;
+
+            @include mobile {
+                display: block;
+                order: 3;
+            }
+
+            &.disable-action {
+                pointer-events: none;
+            }
+
+            ul {
+                li {
+                    height: 2px;
+                    margin: 7px 0 0 0;
+                    background: $white;
+                }
+            }
+        }
+
+        .main-nav {
+            margin-left: auto;
+            margin-bottom: 0.2rem;
+
+            @include mobile {
+                position: fixed;
+                width: 100%;
+                background: #0B0B0B;
+                left: 0;
+                top: 70px;
+                height: calc(100vh - 70px);
+                padding: 0 0.75rem;
+                opacity: 0;
+                transform: translate(-100%, 0);
+                transition: $base-transition;
+            }
+
+            &.active {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
+            ul {
+                display: flex;
+                position: relative;
+                flex-wrap: wrap;
+
+                >li {
+                    text-transform: uppercase;
+                    margin-right: 2.5rem;
+                    line-height: 1;
+                    font-size: 0.9rem;
+
+                    @include ipadLandscape {
+                        margin-right: 1.5rem;
+                    }
+
+                    @include mobile {
+                        width: 100%;
+                        margin-right: 0;
+                        font-size: 1.1rem;
+                        border-top: rgba($white, 0.3) solid 1px;
+                    }
+
+                    &:first-child {
+                        border-top: 0;
+                    }
+
+                    &.disable-action {
+                        pointer-events: none;
+                    }
+
+                    >a {
+                        text-decoration: none;
+                        color: $white;
+                        display: block;
+                        position: relative;
+
+                        @include mobile {
+                            padding: 20px 0;
+                        }
+                    }
+
+                    &.has-child {
+                        display: flex;
+
+                        @include mobile {
+                            position: relative;
+                            flex-wrap: wrap;
+                        }
+
+                        >span {
+                            width: 16px;
+                            position: relative;
+                            display: inline-flex;
+                            cursor: pointer;
+
+                            @include mobile {
+                                position: absolute;
+                                top: 30px;
+                                right: 0;
+                            }
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 8px;
+                                height: 2px;
+                                background: $white;
+                                border-radius: 2px;
+                                right: -1.2px;
+                                top: 60%;
+                                transition: $base-transition;
+                                transform: rotate(45deg) translate(-50%, 50%);
+
+                                @include mobile {
+                                    right: 5px;
+                                    top: 50%;
+                                }
+                            }
+
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                width: 8px;
+                                height: 2px;
+                                background: $white;
+                                border-radius: 2px;
+                                right: 1.2px;
+                                top: 60%;
+                                transition: $base-transition;
+                                transform: rotate(-45deg) translate(50%, 50%);
+
+                                @include mobile {
+                                    right: 7.2px;
+                                    top: 50%;
+                                }
+                            }
+                        }
+
+                        .mega-menu {
+                            position: absolute;
+                            padding: 2rem 0;
+                            left: 0;
+                            top: 100%;
+                            width: 55vw;
+                            opacity: 0;
+                            pointer-events: none;
+
+                            @include bigdesktop {
+                                width: 45vw;
+                            }
+
+                            @include ipadLandscape {
+                                width: 68vw;
+                            }
+
+                            @include desktop {
+                                transition: all 0.5s ease-in-out;
+                            }
+
+                            @media only screen and (min-width: 1300px) and (max-width: 1380px) {
+                                width: 58vw;
+                            }
+
+                            transform: translate(0, 1rem);
+
+                            @include mobile {
+                                padding: 0;
+                                width: 100%;
+                                position: relative;
+                                top: auto;
+                                opacity: 1;
+                                transform: none;
+                                display: none;
+                                pointer-events: all;
+                            }
+
+                            .wrap {
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: space-between;
+                                padding: 2rem 0;
+
+                                @include mobile {
+                                    padding: 0;
+                                }
+
+                                .sub-nav-wrap {
+                                    width: 300px;
+
+                                    @include mobile {
+                                        width: 100%;
+                                    }
+
+                                    ul {
+                                        display: flex;
+                                        flex-wrap: wrap;
+
+                                        li {
+                                            width: 100%;
+                                            margin-bottom: 1.5rem;
+                                            font-size: 0.8rem;
+
+                                            @include mobile {
+                                                margin: 0;
+                                                font-size: 0.9rem;
+                                            }
+
+                                            &:first-child {
+                                                @include mobile {
+                                                    border-top: rgba($white, 0.3) solid 1px;
+                                                }
+                                            }
+
+                                            a {
+                                                text-decoration: none;
+                                                color: rgba($white, 0.8);
+                                                display: block;
+                                                transition: $base-transition;
+
+                                                @include mobile {
+                                                    padding: 20px;
+                                                }
+
+                                                &:hover {
+                                                    color: rgba($white, 1);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .imgage-wrap {
+                                    position: relative;
+                                    width: 350px;
+
+                                    @include mobile {
+                                        display: none;
+                                    }
+
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        left: 0;
+                                        bottom: 0;
+                                        z-index: 1;
+                                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+                                    }
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover~.menu-bg-overlay {
+                            @include desktop {
+                                opacity: 1;
+                                transform: translate(0, 0);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        >a {
+                            @include desktop {
+                                color: $accent-red;
+                            }
+                        }
+
+                        >span {
+                            @include desktop {
+                                color: $accent-red;
+                            }
+
+                            &:before {
+                                @include desktop {
+                                    top: 30%;
+                                    background: $accent-red;
+                                    transform: rotate(-45deg) translate(-50%, -50%);
+                                }
+
+                            }
+
+                            &:after {
+                                @include desktop {
+                                    top: 30%;
+                                    background: $accent-red;
+                                    transform: rotate(45deg) translate(50%, -50%);
+                                }
+                            }
+                        }
+
+                        .mega-menu {
+                            opacity: 1;
+                            pointer-events: all;
+                            transform: translate(0, 0);
+                        }
+                    }
+
+                    &.active {
+                        >a {
+                            @include desktop {
+                                color: $accent-red;
+                            }
+
+                            &:before {
+                                @include mobile {
+                                    top: 40%;
+                                    background: $accent-red;
+                                    transform: rotate(-45deg) translate(-50%, -50%);
+                                }
+                            }
+
+                            &:after {
+                                @include mobile {
+                                    top: 40%;
+                                    background: $accent-red;
+                                    transform: rotate(45deg) translate(50%, -50%);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .menu-bg-overlay {
+                    position: fixed;
+                    width: 100vw;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    height: 60vh;
+                    background: rgba($black, 1);
+                    opacity: 0;
+                    transform: translate(0, -3rem);
+                    transition: $base-transition;
+                    pointer-events: none;
+
+                    @include ipadLandscape {
+                        height: 45vh;
+                    }
+                }
+            }
+        }
+
+        .icon-nav {
+            @include mobile {
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+
+            ul {
+                display: flex;
+
+                li {
+                    width: 20px;
+                    margin-right: 1rem;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &.mail {
+                        width: 30px;
+
+                        @include mobile {
+                            display: none;
+                        }
+                    }
+
+                    a {
+                        display: block;
+
+                        &.disable-action {
+                            pointer-events: none;
+                        }
+
+                        svg {
+                            width: 100%;
+                            fill: $white;
+                            transition: $base-transition;
+                        }
+
+                        .close {
+                            display: none;
+                            margin-top: 3px;
+                        }
+
+                        &:hover {
+                            svg {
+                                @include desktop {
+                                    fill: $accent-red;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        svg {
+                            @include desktop {
+                                fill: $accent-red;
+                            }
+                        }
+
+                        .lens {
+                            display: none;
+                        }
+
+                        .close {
+                            display: block;
+                        }
+
+                        .search-screen-wrap {
+                            opacity: 1;
+                            pointer-events: all;
+                            transform: translate(0, 0rem);
+                        }
+                    }
+                }
+            }
+        }
+
+        .search-screen-wrap {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: rgba($black, 1);
+            color: $white;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            opacity: 0;
+            pointer-events: none;
+            transition: $base-transition;
+            transform: translate(0, -3rem);
+
+            @include mobile {
+                width: 100%;
+                height: 100vh;
+            }
+
+            .wrap {
+                max-width: 70%;
+                margin: 0 auto;
+                margin-top: 20vh;
+                display: block;
+
+                @include mobile {
+                    max-width: calc(100% - 1.5rem);
+                    margin-top: 100px;
+                }
+
+                .search-wrap {
+                    width: 100%;
+                    position: relative;
+
+                    .input-text {
+                        border: 0;
+                        border-bottom: $white solid 1px;
+                        padding: 10px 0;
+                        padding-left: 35px;
+                        padding-right: 80px;
+                        outline: 0;
+                        background: transparent;
+                        color: $white;
+                        width: 100%;
+
+                        @include mobile {
+                            padding-right: 30px;
+                        }
+                    }
+
+                    .search-icon {
+                        width: 20px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translate(0, -50%);
+
+                        svg {
+                            width: 100%;
+                            fill: $white;
+                        }
+                    }
+
+                    .submit-button {
+                        width: 70px;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        display: flex;
+                        background: transparent;
+                        border: 0;
+                        cursor: pointer;
+                        color: $white;
+                        align-items: center;
+                        font-size: 0.9rem;
+
+                        @include mobile {
+                            width: 20px;
+                        }
+
+                        .label {
+                            @include mobile {
+                                display: none;
+                            }
+                        }
+
+                        svg {
+                            margin-left: 5px;
+                            width: 20px;
+
+                            path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+
+                .search-suggestions-wrap {
+                    max-width: 60%;
+                    border-bottom: $white solid 1px;
+                    padding-bottom: 1rem;
+                    margin-top: 4rem;
+
+                    @include mobile {
+                        max-width: 100%;
+                        margin-top: 2rem;
+                    }
+
+                    .label {
+                        font-size: 0.9rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .tokens-wrap {
+                        ul {
+                            flex-wrap: wrap;
+
+                            li {
+                                width: auto;
+                                padding: 6px 20px;
+                                border: $white solid 1px;
+                                border-radius: 50px;
+                                margin-right: 0.5rem;
+                                margin-bottom: 0.5rem;
+                                cursor: pointer;
+                                white-space: nowrap;
+                                font-size: 0.8rem;
+                                transition: $base-transition;
+
+                                &:hover {
+                                    border: $accent-red solid 1px;
+                                    background: $accent-red;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.white {
+        background: $white;
+
+        .logo {
+            svg {
+                fill: $black;
+
+                .rise {
+                    fill: $accent-red;
+                }
+            }
+        }
+
+        .hamburger {
+            ul {
+                li {
+                    background: $black;
+                }
+            }
+        }
+
+        .main-nav {
+            @include mobile {
+                background: $white;
+            }
+
+            ul {
+                >li {
+                    @include mobile {
+                        border-top: rgba($black, 0.3) solid 1px;
+                    }
+
+                    >a {
+                        color: $black;
+                    }
+
+                    >span::before,
+                    >span:after {
+                        background: $black;
+                    }
+
+                    &.has-child {
+                        >a {
+                            &:before {
+                                background: $black;
+                            }
+
+                            &:after {
+                                background: $black;
+                            }
+                        }
+
+                        >span {
+                            &:before {
+                                background: $black;
+                            }
+
+                            &:after {
+                                background: $black;
+                            }
+                        }
+
+                        .mega-menu {
+                            .wrap {
+                                .sub-nav-wrap {
+                                    ul {
+                                        li {
+                                            &:first-child {
+                                                @include mobile {
+                                                    border-top: rgba($black, 0.3) solid 1px;
+                                                }
+                                            }
+
+                                            a {
+                                                color: rgba($black, 0.8);
+
+                                                &:hover {
+                                                    color: rgba($black, 1);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .imgage-wrap {
+                                    &:before {
+                                        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .menu-bg-overlay {
+                    background: rgba($white, 1);
+                }
+            }
+        }
+
+        .icon-nav {
+            ul {
+                li {
+                    a {
+                        svg {
+                            fill: $black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .search-screen-wrap {
+            background: rgba($white, 1);
+            color: $black;
+
+            .wrap {
+                .search-wrap {
+                    .input-text {
+                        border-bottom: $black solid 1px;
+                        color: $black;
+                    }
+
+                    .search-icon {
+                        svg {
+                            fill: $black;
+                        }
+                    }
+
+                    .submit-button {
+                        color: $black;
+
+                        svg {
+                            path {
+                                fill: $black;
+                            }
+                        }
+                    }
+                }
+
+                .search-suggestions-wrap {
+                    border-bottom: $black solid 1px;
+
+                    .tokens-wrap {
+                        ul {
+                            li {
+                                border: $black solid 1px;
+
+                                &:hover {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+}

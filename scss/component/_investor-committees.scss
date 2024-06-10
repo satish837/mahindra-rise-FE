@@ -1,0 +1,61 @@
+/*committees*/
+.committSection{
+    img{
+        width: auto;
+    }
+    .col{
+        @include mobile{
+        width: 100%;
+        }
+    }
+    h3{
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #000000;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+    .iconImg{
+        width: 80px;
+        height: 80px;
+        border: 1px solid #C4C4C4;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px !important;
+        box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.05);
+    }
+    .icons{
+        a{
+        font-size: 1rem;
+        line-height: 1.18;
+        color: $accent-red;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        position: relative;
+        }
+    }
+    p{
+        margin:10px 0;
+        font-size: 1rem;
+        strong{
+            font-weight: 500;
+        }
+    }
+
+}
+
+.committSection {
+    .flickity-page-dots{
+        bottom: 0;
+        .dot{
+            background: #C4C4C4;
+            &.is-selected{
+                background:$accent-red;
+            }
+        }
+    }
+}
+/*committees End*/

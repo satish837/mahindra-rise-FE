@@ -1,0 +1,234 @@
+.press-release {
+    .flickity-slider {
+        .content {
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .grid-layout {
+        @include desktop {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 20px;
+        }
+
+        .flickity-page-dots {
+            @include mobile {
+                width: 90%;
+                text-align: left;
+                bottom: -2rem;
+            }
+
+            .dot {
+                @include mobile {
+                    background: rgba($black, 0.3);
+                }
+
+                &.is-selected {
+                    background: $accent-red;
+                }
+            }
+        }
+
+        .slides {
+            .wrap {
+                position: relative;
+                height: 100%;
+                background: $colorE31837;
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                .image-wrap {
+                    overflow: hidden;
+                    position: relative;
+                    height: 100%;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        height: 100%;
+                        width: 100%;
+                        z-index: 1;
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+
+                        @include mobile {
+                            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: $base-transition;
+                    }
+
+                    &.hide-desktop {
+                        display: none;
+
+                        @include tabletLandscape-max {
+                            display: block;
+                        }
+                    }
+
+                }
+
+                .content {
+                    z-index: 2;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    left: 0;
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    @include mobile {
+                        padding: 25px;
+                    }
+
+                    .stretched-link {
+                        &:after {
+                            position: absolute;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            z-index: 1;
+                            content: "";
+                        }
+                    }
+
+                    .shared-link {
+                        position: absolute;
+                        right: 40px;
+                        bottom: 40px;
+
+                        @include mobile {
+                            right: 20px;
+                            bottom: 20px;
+                        }
+                    }
+
+                    .desc {
+                        max-width: 430px;
+                        width: 100%;
+                    }
+
+                    h6 {
+                        font-family: $body;
+                        font-size: 0.75rem;
+                        color: $white;
+                        line-height: 1;
+                    }
+
+                    h2 {
+                        font-family: $body;
+                        font-size: 1.875rem;
+                        font-weight: 500;
+                        color: $white;
+                        line-height: 1.26;
+                        margin: 0;
+                        opacity: 1;
+
+                        @include mobile {
+                            font-size: 1.37rem;
+                            line-height: 1.26;
+                        }
+                    }
+
+                    p {
+                        font-family: $body;
+                        font-size: 1rem;
+                        color: $white;
+                        margin-bottom: 0;
+                        line-height: 1.75;
+                        opacity: 1;
+                    }
+                }
+
+                a {
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .slides:nth-child(1) {
+            @include desktop {
+                grid-row-start: 1;
+                grid-column-start: 1;
+                grid-row-end: 3;
+                grid-column-end: 2;
+            }
+        }
+
+        .slides:nth-child(2) {
+            @include desktop {
+                grid-row-start: 1;
+                grid-column-start: 2;
+                grid-row-end: 2;
+                grid-column-end: 2;
+            }
+
+            .content {
+                @include tabletPotrait {
+                    // position: relative;
+                    // top: 0;
+                    // transform: none;
+                }
+
+                @include mobile {
+                    // position: relative;
+                    // top: 0;
+                    // transform: none;
+                }
+            }
+        }
+
+        .slides:nth-child(3) {
+            @include desktop {
+                grid-row-start: 2;
+                grid-column-start: 2;
+                grid-row-end: 2;
+                grid-column-end: 2;
+            }
+        }
+    }
+}
+
+.formulae-sec {
+    .grid-layout {
+        @include tabletLandscape-max {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .slides {
+            @include tabletLandscape-max {
+                width: 100%;
+            }
+        }
+
+        .slides:nth-child(1) {
+            @include tabletLandscape-max {
+                order: 2;
+            }
+        }
+    }
+}

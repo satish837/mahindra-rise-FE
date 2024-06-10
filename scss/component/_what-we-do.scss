@@ -1,0 +1,173 @@
+.what-we-do-wrap{
+    .content{
+        top: 60%;
+        @include mobile{
+            left: 30px;
+        }
+        .heading{
+            font-size: 1.625rem;
+            @include mobile{
+                font-size: 1rem;
+                font-family: $heading-medium;
+            }
+        }
+        p{
+            font-size: 1rem;
+            max-width: 50%;
+            @include mobile{
+                max-width: 100%;
+                font-weight: 400;
+            }
+        }
+    }
+    .what-we-do-thumb-slider-wrap{
+        padding: 0 calc(5% + 0.75rem);
+        position: relative;
+        background: $black;
+        overflow: hidden;
+        @include mobile{
+            padding: 0 30px;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            .swiper-slide {
+                cursor: pointer;
+                border-right: $black solid 1px;
+                position: relative;
+                &:after{
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0.08) 100%);
+                }
+                .title{
+                    position: absolute;
+                    width: auto;
+                    left: 1.18rem;
+                    bottom: 1.6rem;
+                    color: $white;
+                    padding-bottom: 0.5rem;
+                    z-index: 2;
+                    font-family: $heading-semibold;
+                    text-transform: uppercase;
+                    font-size: 0.68rem;
+                    @include mobile{
+                        font-size: 0.6rem;
+                        left: 5%;
+                        bottom: 5%;
+                    }
+                }
+                &.swiper-slide-active{
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 5px;
+                        background: $accent-red;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 2;
+                    }
+                }
+          }
+        }
+    
+        .swiper-button-prev, .swiper-button-next{
+            border-radius: 0;
+            border: $black solid 1px;
+            background-color: $black;
+            width: calc(5% + 0.75rem);
+            height: 100%;
+            bottom: auto;
+            top: 0;
+            left: 0;
+            margin: 0;
+            transform: none;
+            transition: $base-transition;
+            background-size: 15px;
+            @include mobile{
+                width: 30px;
+            }
+            &.previous{
+                left: 0;
+                right: auto;
+            }
+            &.next{
+                right: 0;
+            }
+            &:hover{
+                border-color: $accent-red;
+                background-color: $accent-red; 
+            }
+        }
+        .swiper-button-next{
+            left: auto;
+            right: 0;
+        }
+        &.people-stories-thumb{
+            .slides{
+                width: 33.33%;
+                @include mobile{
+                    width: 50%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0; 
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+                    display: block;
+                }
+            }
+            .content-thumb{
+                position: absolute;
+                width: auto;
+                left: 10%;
+                bottom: 10%;
+                padding-bottom: 0.5rem;
+                z-index: 2;
+                color: $white;
+                @include mobile{
+                left: 5%;
+                bottom: 1%;
+                }
+                h2{
+                    font-size: 12px;
+                    font-family: "Quantum-Rise-Regular", sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    @include mobile{
+                        font-size: 11px;
+                        }
+                }
+                p{
+                    color: $white;
+                    font-size: 12px;
+                    font-family: $body;
+                    margin-bottom: 0;
+                    @include mobile{
+                        display: none;
+                    }
+                }
+            }
+            .play-button{
+                @include mobile{
+                    top: 40%;
+                }
+                img{
+                    width: auto;
+                    height: auto;
+                    @include mobile{
+                        width: 20px !important;
+                    }
+                }
+            }
+        }
+    }
+}
